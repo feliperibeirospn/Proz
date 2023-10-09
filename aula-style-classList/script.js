@@ -8,3 +8,13 @@ const buttonColor = document.querySelector('button')
 buttonColor.style.color= 'blue';
 buttonColor.style.border= '2px solid blue';
 buttonColor.style.borderRadius = '13px';
+
+const usernameInput = document.querySelector("#login-usuario")
+
+usernameInput.classList.add('error');
+
+ 
+
+const errorMessage = document.querySelector('.error-text');
+
+errorMessage.classList.add('visible');

@@ -11,10 +11,16 @@ buttonColor.style.borderRadius = '13px';
 
 const usernameInput = document.querySelector("#login-usuario")
 
-usernameInput.classList.add('error');
+usernameInput.classList.add('correct');
 
  
 
 const errorMessage = document.querySelector('.error-text');
 
-errorMessage.classList.add('visible');
+errorMessage.classList.add('correct');
+
+const userInputsenha = document.querySelector("#login-senha")
+userInputsenha.classList.add("error")
+
+let errorTextElements = document.querySelectorAll('.error-text')
+errorTextElements[1].classList.add('visible')

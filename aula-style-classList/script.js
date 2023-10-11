@@ -15,12 +15,12 @@ usernameInput.classList.add('correct');
 
  
 
-const errorMessage = document.querySelector('.error-text');
+const errorMessage = document.querySelector('.error-text')
 
 errorMessage.classList.add('correct');
 
-const userInputsenha = document.querySelector("#login-senha")
-userInputsenha.classList.add("error")
+const ErrorBG = document.querySelector("#login-senha")
+ErrorBG.classList.add("error")
 
-let errorTextElements = document.querySelectorAll('.error-text')
+const errorTextElements = document.querySelectorAll('.error-text')
 errorTextElements[1].classList.add('visible')

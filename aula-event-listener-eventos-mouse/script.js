@@ -10,15 +10,30 @@ let subtotalInfo = {
 
   quantidade: 1,
 
+  valorInicial: 11.66,
+
   valor: 11.66,
+
+  
 
 };
 
 
+function atualizarSubtotal() {
+  if (subtotalInfo.quantidade > 1) {
+    quantidadeSubtotal.innerText = subtotalInfo.quantidade + " itens";
 
-quantidadeSubtotal.innerText = subtotalInfo.quantidade + " itens";
+    valorSubtotal.innerText = subtotalInfo.valor.toFixed(2);
+  } else {
+    quantidadeSubtotal.innerText = subtotalInfo.quantidade + " item";
 
-valorSubtotal.innerText = subtotalInfo.valor;
+    valorSubtotal.innerText = subtotalInfo.valor.toFixed(2);
+  }
+
+
+}
+
+atualizarSubtotal()
 
 
 
@@ -37,6 +52,14 @@ let quantidadeProduto01 = document.querySelector
 function adicionarUm() {
 
   quantidadeProduto01.value = Number(quantidadeProduto01.value) + 1;
+  //manupular qtd no subtotal
+  subtotalInfo.quantidade = subtotalInfo.quantidade + 1;
+  // atualizar valor
+  subtotalInfo.valor = subtotalInfo.valor + subtotalInfo.valorInicial;
+
+
+  //atualizar dom
+  atualizarSubtotal()
 
 }
 
@@ -53,10 +76,21 @@ let btnSubtrairProduto01 = document.querySelector
 
 
 function subtrairUm() {
- while (quantidadeProduto01.value > 0){
-  quantidadeProduto01.value = Number(quantidadeProduto01.value) - 1;
- }
- 
+  if (quantidadeProduto01.value > 0) {
+    quantidadeProduto01.value = Number(quantidadeProduto01.value) - 1;
+
+    subtotalInfo.quantidade = subtotalInfo.quantidade - 1;
+
+    if (subtotalInfo.valor > subtotalInfo.valorInicial) {
+      subtotalInfo.valor = subtotalInfo.valor - subtotalInfo.valorInicial;
+    } else {
+      subtotalInfo.valor = 0.00;
+    }
+    
+    atualizarSubtotal()
+
+  }
+
 
 
 }

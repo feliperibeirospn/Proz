@@ -14,3 +14,9 @@ usernameInput.addEventListener("blur",function(){
 })
 
 // Validar valor do input
+
+//ANDREY
+//CARLOS GOES
+//PAULO GOES
+//SANDRO ESPERIDIÃO
+//FELIPE

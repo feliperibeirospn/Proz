@@ -1,0 +1,16 @@
+CREATE OR REPLACE FUNCTION contar_clientes_no_dia(data_desejada DATE)
+RETURNS INTEGER AS $$
+DECLARE
+    total_clientes INTEGER;
+BEGIN
+    SELECT COUNT(*)
+    INTO total_clientes
+    FROM cliente
+    WHERE DATE(data_cadastro) = data_desejada;
+
+    RETURN total_clientes;
+END;
+$$ LANGUAGE plpgsql;
+
+Para chamar 
+SELECT contar_clientes_no_dia('2023-11-21');
